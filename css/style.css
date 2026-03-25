@@ -143,7 +143,7 @@ header {
 
 /* Блок с мокапом */
 .hero {
-  background: url("../src/svg/dust_clouds_1.svg") no-repeat center / contain;
+  background: url("../src/svg/dust_clouds_1.svg") no-repeat center / cover;
 }
 
 .hero-inner {
@@ -291,7 +291,7 @@ header {
 
 /* Свяжитесь с нами */
 .contacts {
-  background: url("../src/svg/dust_clouds_2.svg") no-repeat center / contain;
+  background: url("../src/svg/dust_clouds_2.svg") no-repeat center / cover;
 }
 
 .contacts-row {
