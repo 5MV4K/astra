@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Astra</title>
+  <link rel="stylesheet" href="css/style.css">
+  
+  
+  <!-- Для фавиконки https://realfavicongenerator.net/your-favicon-is-ready -->
+	<link rel="icon" type="image/png" href="/src/favicon/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="/src/favicon/favicon.svg" />
+	<link rel="shortcut icon" href="/src/favicon/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/src/favicon/apple-touch-icon.png" />
+	<link rel="manifest" href="/src/favicon/site.webmanifest" />
+	
+</head>
+<body>
+
+  <!-- Хедер -->
+  <header>
+    <div class="header-inner">
+      <div class="flex gap-20">
+        <div class="logo">Astra</div>
+        <div class="email">info@astra.ru</div>
+      </div>
+      <div class="flex gap-10">
+        <a href="#" class="btn-app hide-mobile google-play">
+			<span class="gp-icon"></span>
+          <span>Google Play</span>
+        </a>
+        <a href="#" class="btn-app hide-mobile app-store">
+			<span class="as-icon"></span>
+          <span>App Store</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Промо блок с мокапом -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-content">
+	  <div class="group-title">
+        <h1 class="hero-title section-title">ТВ<span class="o-with-star section-title">О</span>Й</h1>
+        <h1 class="hero-title section-title">ПЕРСОНАЛЬНЫЙ</h1>
+        <h1 class="hero-title section-title blue-color">АСТРОЛОГ</h1>
+		</div>
+        <p class="hero-text">
+          Ежедневно нас окружает множество людей, но нам всегда интересно, кто они и чего мы можем от них ожидать. <b>Astra может помочь вам лучше понять людей, с которыми вы общаетесь.</b>
+        </p>
+        <div class="flex gap-10 hero-buttons">
+          <a href="#" class="btn-app google-play">
+			<span class="gp-icon"></span>
+            <span>Google Play</span>
+          </a>
+          <a href="#" class="btn-app app-store">
+            <svg class="btn-icon" viewBox="0 0 24 24">
+			<span class="as-icon"></span>
+            <span>App Store</span>
+          </a>
+        </div>
+      </div>
+      <div class="hero-app">
+        <img src="src/images/mockup.png" alt="Mockup приложения" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Карточки функций -->
+  <section class="features">
+    <div class="container">
+      <h2 class="mb-20 section-title">ФУНКЦИИ</h2>
+	  <p>Приложение Astra простое и содержит все необходимое, чтобы узнать о себе и окружающих вас людях.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-header">
+		  <div class="feature-icon about-self"></div>
+          <h3>Узнайте о себе</h3>
+          </div>
+          <p>Вы получите подробное и точное описание вашей личности, ваших слабых и сильных сторон.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-header">
+		  <div class="feature-icon about-humans"></div>
+          <h3>Узнайте о людях</h3>
+          </div>
+          <p>В разделе «Люди» вы можете получить подробное описание любого человека, о котором хотите узнать больше.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-header">
+		  <div class="feature-icon about-links"></div>
+          <h3>Узнайте о связях</h3>
+          </div>
+          <p>Как вы подходите друг другу с вашим партнёром. Знание точек напряжения поможет сохранить отношения.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Текстовый блок -->
+  <section class="text-block">
+    <div class="container">
+	<div class="group-title">
+      <h2 class="mb-20 section-title">ВАШ ЛИЧНЫЙ</h2>
+      <h2 class="mb-20 section-title">АСТРОЛОГ ASTRA</h2>
+	  </div>
+      <p>
+        может полностью заменить настоящую профессиональную астрологию
+      </p>
+    </div>
+  </section>
+
+  <!-- Свяжитесь с нами -->
+  <section class="contacts">
+    <div class="container">
+	<div class="group-title">
+      <h2 class="mb-20 section-title">CВЯЖИТЕСЬ</h2>
+      <h2 class="mb-20 section-title">С НАМИ</h2>
+	</div>
+      <div class="flex gap-20 contacts-row">
+        <form class="contact-form">
+		<h3>Остались вопросы?</h3>
+            <!-- <label for="name">Имя</label> -->
+          <input type="text" id="name" placeholder="Ваше имя" />
+
+            <!-- <label for="email">E‑mail</label> -->
+          <input type="email" id="email" placeholder="Email" />
+
+            <!-- <label for="phone">E‑mail</label> -->
+          <input type="phone" id="phone" placeholder="Номер телефона" />
+		  
+          <!-- <label for="message">Сообщение</label> -->
+          <textarea id="message" placeholder="Ваш вопрос"></textarea>
+
+          <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>
+        <form class="contact-form"><div class="contact-info">
+		<h3>Контакты</h3>
+		  <div class="contact-group">
+		  <div class="contact-icon email"></div>
+          <div class="contact-info-item"><strong>Email:</strong> <br>info@astra.ru</div>
+		  </div>
+		  <div class="contact-group">
+		  <div class="contact-icon phone"></div>
+          <div class="contact-info-item"><strong>Телефон:</strong> <br>+78121112233</div>
+		  </div>
+		  <div class="contact-group">
+		  <div class="contact-icon adress"></div>
+          <div class="contact-info-item"><strong>Юридический адрес:</strong> <br>Россия, 191186, Санкт-Петербург, ул. Большая Морская, 18</div>
+		  </div>
+        </div>
+		</form>
+      </div>
+      <div class="map"></div>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h5>Astra</h5>
+        <p>Твой персональный астролог в кармане. Узнай о себе и окружающих.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Навигация</h5>
+        <ul>
+          <li><a href="#">Главная</a></li>
+          <li><a href="#">Функции</a></li>
+          <li><a href="#">Как связаться</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Контакты</h5>
+        <ul>
+          <li>info@astra.ru</li>
+          <li>+78121112233</li>
+          <li>Санкт-Петербург, ул. Большая Морская, 18</li>
+
+        </ul>
+      </div>
+	  <div class="footer-col">
+        <ul>
+          <li class="footer-btn-item">
+            <a href="#" class="btn-app">
+			<span class="gp-icon"></span>
+              <span>Google Play</span>
+            </a>
+          </li>
+          <li class="footer-btn-item">
+            <a href="#" class="btn-app">
+				<span class="as-icon"></span>
+              <span>App Store</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Astra. Все права защищены.</span>
+      <a href="#">Политика конфиденциальности</a>
+      <a href="#">Пользовательское соглашение</a>
+    </div>
+  </footer>
+
+</body>
+</html>

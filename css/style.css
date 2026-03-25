@@ -1,0 +1,493 @@
+@font-face {
+  font-family: "RussoOne";
+  src: url("../src/fonts/RussoOne-Regular.ttf") format("truetype");
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  color: #333;
+  line-height: 1.6;
+  background-color: #D8D8D8;
+}
+
+section {
+  padding: 60px 20px;
+}
+
+.section-title,
+a.btn-app span {
+	font-family: "RussoOne";
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-20 {
+  gap: 20px;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.hide-mobile {
+  display: none;
+}
+
+/* Хедер */
+header {
+  background: #2681E9;
+  padding: 35px 20px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #E9E9E9;
+}
+
+.email {
+  font-size: 14px;
+  color: #555;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn-primary {
+  background: #0066cc;
+}
+
+/* Кнопки магазинов */
+.btn-app {
+  background: #333;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  width: 340px;
+  justify-content: center;
+}
+
+.btn-app span {
+  margin-left: 8px;
+}
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.google-play {
+  background: #679cfd;
+}
+
+.app-store {
+  background: #ff8e32;
+}
+
+/* Блок с мокапом */
+.hero {
+  background: url("../src/svg/dust_clouds_1.svg") no-repeat center / contain;
+}
+
+.hero-inner {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-content {
+  flex: 1 1 600px;
+}
+
+.hero-title {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.group-title {
+	margin-bottom: 16px;
+}
+
+.blue-color {
+	color: #2681E9;
+}
+
+.o-with-star {
+	background: url("../src/svg/star.svg") no-repeat center / contain;
+}
+
+.hero-text {
+  font-size: 16px;
+  margin-bottom: 24px;
+  color: #555;
+}
+
+.hero-buttons {
+  flex-wrap: wrap;
+}
+
+.hero-app {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-app img {
+  max-width: 340px;
+  height: auto;
+}
+
+/* Блок функций */
+.features {
+  background: #E4E4E4;
+}
+
+.features .container h2,
+.features .container p { 
+	color: #2681E9;
+}
+
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.feature-card {
+  background: #D9D9D9;
+  padding: 24px;
+  border-radius: 40px;
+  border: 2px solid #548BEF;
+  flex: 1 1 280px;
+}
+
+.feature-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  color: #1B191A;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: #2681E9;
+}
+
+.feature-header {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.feature-icon {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 8px;
+}
+
+.feature-icon.about-self {
+	background: url("../src/svg/feature_1.svg") no-repeat center / contain;
+}
+
+.feature-icon.about-humans {
+	background: url("../src/svg/feature_2.svg") no-repeat center / contain;
+}
+
+.feature-icon.about-links {
+	background: url("../src/svg/feature_3.svg") no-repeat center / contain;
+}
+
+
+.feature-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: #0066cc;
+}
+
+/* Текстовый блок */
+
+.text-block {
+  background: #2681E9;
+  color: #E9E9E9;
+}
+
+.text-block .group-title,
+.contacts .group-title {
+	text-align: center;
+}
+
+.text-block h2,
+.contacts h2,
+.container h2 {
+  font-size: 48px;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.text-block p {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+
+/* Свяжитесь с нами */
+.contacts {
+  background: url("../src/svg/dust_clouds_2.svg") no-repeat center / contain;
+}
+
+.contacts-row {
+  width: 100%;
+}
+
+.contact-form {
+  flex: 1 1 500px;
+  padding: 30px;
+  background: #D9D9D9;
+  padding: 24px;
+  border-radius: 40px;
+  border: 2px solid #548BEF;
+  flex: 1 1 280px;
+  color: #2681E9;
+}
+
+.contact-form .contact-group {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+/* иконки в блоке контактов вставить */
+
+.contact-icon.email {
+	background: url("../src/svg/contact_1.svg") no-repeat center / contain;
+}
+
+.contact-icon.phone {
+	background: url("../src/svg/contact_2.svg") no-repeat center / contain;
+}
+
+.contact-icon.adress {
+	background: url("../src/svg/contact_3.svg") no-repeat center / contain;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.contacts h3 {
+  font-size: 32px;
+  margin-bottom: 16px;
+  line-height: 1.2;
+	font-family: "RussoOne";
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 35px;
+  border: 2px solid #548BEF;
+  background: #D9D9D9;
+  color: #2681E9;
+  font-size: 14px;
+}
+
+.contact-form textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.contact-info {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-info-item {
+  font-size: 14px;
+}
+
+.map {
+  flex: 1 1 100%;
+  height: 300px;
+  background: #ddd;
+  margin-top: 16px;
+  border-radius: 10px;
+}
+
+/* Футер */
+footer {
+  background: #1B191A;
+  color: #ccc;
+  padding: 40px 20px 20px;
+  font-size: 14px;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.footer-col h5 {
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col li {
+  margin-bottom: 8px;
+}
+
+.footer-col a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  color: #fff;
+}
+
+.footer-btn-item {
+  margin-top: 8px;
+}
+
+.footer-bottom {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 12px;
+  color: #aaaaaa;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer-bottom a {
+  margin: 0 6px;
+  color: #999;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: #fff;
+}
+
+/* Адаптив */
+@media (max-width: 900px) {
+  .hero-inner {
+    flex-direction: column;
+  }
+  .hero-app {
+    order: 2; /* мокап под текстом */
+    justify-content: center;
+  }
+  .hero-content {
+    order: 1;
+  }
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .email {
+    margin-top: 5px;
+  }
+
+  .hide-mobile {
+    display: inline-flex;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    gap: 24px;
+  }
+
+  .contacts-row {
+    flex-direction: column;
+  }
+
+  .contact-form,
+  .contact-info {
+    flex: 1 1 100%;
+  }
+
+  .btn-app {
+    width: 100%;
+    max-width: 340px;
+  }
+}
