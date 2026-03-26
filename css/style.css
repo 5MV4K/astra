@@ -190,7 +190,7 @@ header .btn-app {
 }
 
 .hero-app {
-  flex: 1 1 300px;
+  flex: 1 1 421px;
   display: flex;
   justify-content: center;
 }
@@ -198,8 +198,8 @@ header .btn-app {
 /*Параметры слайдера*/
 .slider {
   position: relative;
-  width: 340px;
-  height: auto;
+  width: 421px;
+  height: 841px;
   overflow: hidden;
 }
 
@@ -222,7 +222,7 @@ header .btn-app {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('src/images/phone-frame.png') no-repeat center center;
+  background: url('../src/images/phone-frame.png') no-repeat center center;
   background-size: contain;
   z-index: 10;
 }
