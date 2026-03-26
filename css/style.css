@@ -190,14 +190,53 @@ header .btn-app {
 }
 
 .hero-app {
-  flex: 1 1 300px;
+  flex: 1 1 421px;
   display: flex;
   justify-content: center;
 }
 
-.hero-app img {
-  max-width: 340px;
-  height: auto;
+/*Параметры слайдера*/
+.slider {
+  position: relative;
+  width: 421px;
+  height: 841px;
+  overflow: hidden;
+}
+
+.slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  animation: slideShow 15s infinite; /* 3 фото * 5 сек = 15 сек цикл */
+}
+
+/* Настройки рамки */
+.frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../src/images/phone-frame.png') no-repeat center center;
+  background-size: contain;
+  z-index: 10;
+}
+
+/* Задержка для каждой картинки */
+.slider img:nth-child(2) { animation-delay: 5s; }
+.slider img:nth-child(3) { animation-delay: 10s; }
+
+@keyframes slideShow {
+  0% { opacity: 0; }
+  5% { opacity: 1; }   /* Появление */
+  33% { opacity: 1; }  /* Удержание (до 5-й секунды) */
+  38% { opacity: 0; }  /* Исчезновение */
+  100% { opacity: 0; }
 }
 
 /* Блок функций */
