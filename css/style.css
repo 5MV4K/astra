@@ -18,7 +18,7 @@ body {
 }
 
 section {
-  padding: 60px 20px;
+  padding: 100px 20px 120px 20px;
 }
 
 .section-title,
@@ -112,15 +112,19 @@ header {
 /* Кнопки магазинов */
 .btn-app {
   background: #333;
-  padding: 8px 20px;
+  padding: 10px 20px;
   border-radius: 30px;
-  font-size: 14px;
+  font-size: 24px;
   display: inline-flex;
   align-items: center;
   color: #fff;
   text-decoration: none;
   width: 340px;
   justify-content: center;
+}
+
+header .btn-app {
+  border: 2px solid #e9e9e9;
 }
 
 .btn-app span {
@@ -176,9 +180,9 @@ header {
 }
 
 .hero-text {
-  font-size: 16px;
+  font-size: 20px;
   margin-bottom: 24px;
-  color: #555;
+  color: #2681E9;
 }
 
 .hero-buttons {
