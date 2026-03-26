@@ -239,7 +239,8 @@ header {
   gap: 10px;
 }
 
-.feature-icon {
+.feature-icon,
+.contact-icon {
   width: 64px;
   height: 64px;
   margin-bottom: 8px;
