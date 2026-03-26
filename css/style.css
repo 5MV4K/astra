@@ -198,7 +198,7 @@ header .btn-app {
 /*Параметры слайдера*/
 .slider {
   position: relative;
-  max-width: 340px;
+  width: 340px;
   height: auto;
   overflow: hidden;
 }
@@ -213,6 +213,18 @@ header .btn-app {
   opacity: 0;
   transition: opacity 1s ease-in-out;
   animation: slideShow 15s infinite; /* 3 фото * 5 сек = 15 сек цикл */
+}
+
+/* Настройки рамки */
+.frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('src/images/phone-frame.png') no-repeat center center;
+  background-size: contain;
+  z-index: 10;
 }
 
 /* Задержка для каждой картинки */
