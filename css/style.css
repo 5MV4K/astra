@@ -114,8 +114,24 @@ header {
   color: #fff;
 }
 
-.btn-primary {
-  background: #0066cc;
+.btn-primary { 
+  background: #679CFD;
+  width: 100%;
+  padding: 18px 30px;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  border-radius: 35px;
+  border: 2px solid #679CFD;
+  font-size: 24px;
+  font-family: "RussoOne";
+}
+
+.btn-primary:hover {
+  background: #276AE6;
+}
+
+.btn-primary:disabled {
+  background: #5f9de4;
 }
 
 /* Кнопки магазинов */
@@ -123,7 +139,6 @@ header {
   background: #1B191A;
   padding: 10px 20px;
   border-radius: 30px;
-  
   font-size: 24px;
   display: inline-flex;
   align-items: center;
@@ -132,6 +147,10 @@ header {
   width: 340px;
   /* justify-content: space-evenly; */
   padding-left: 40px;
+}
+
+.btn-app:hover {
+	background: #373535;
 }
 
 .btn-app--bordered {
@@ -157,8 +176,16 @@ header .btn-app {
   background: #679cfd;
 }
 
+.google-play:hover {
+  background: #276AE6;
+}
+
 .app-store {
   background: #ff8e32;
+}
+
+.app-store:hover {
+  background: #EE7615;
 }
 
 /* Блок с мокапом */
@@ -438,6 +465,30 @@ p.features-center {
 .contact-form textarea {
   height: 100px;
   resize: vertical;
+}
+
+.custom-alert {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2681e9;
+    color: #e9e9e9;
+    padding: 15px 25px;
+    border-radius: 8px;
+    z-index: 9999;
+    font-size: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    animation: fadeInOut 3s ease forwards;
+    text-align: center;
+    min-width: 250px;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; top: 0; }
+    10% { opacity: 1; top: 20px; }
+    90% { opacity: 1; top: 20px; }
+    100% { opacity: 0; top: 0; visibility: hidden; }
 }
 
 .contact-info {
