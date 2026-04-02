@@ -332,7 +332,7 @@ async function loadContacts() {
       }
       
       const footerList = document.getElementById('footer_contact');
-      footerList.innerHTML = `<li class="footer_email>${contacts.contact_email || 'Нет данных'}</li><li class="footer_phone">${contacts.contact_phone || 'Нет данных'}</li><li class="footer_address">${contacts.contact_address || 'Нет данных'}</li>`;
+      footerList.innerHTML = `<li class="footer_email">${contacts.contact_email || 'Нет данных'}</li><li class="footer_phone">${contacts.contact_phone || 'Нет данных'}</li><li class="footer_address">${contacts.contact_address || 'Нет данных'}</li>`;
     } else {
       console.log('Нет данных в таблице');
     }
