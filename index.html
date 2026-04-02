@@ -73,7 +73,7 @@
   </section>
 
   <!-- Карточки функций -->
-  <section class="features" is="features">
+  <section class="features" id="features">
     <div class="container">
       <h2 class="mb-20 section-title">ФУНКЦИИ</h2>
 	  <p  class="features-center">Приложение Astra простое и содержит все необходимое, чтобы узнать о себе и окружающих вас людях.</p>
@@ -332,7 +332,7 @@ async function loadContacts() {
       }
       
       const footerList = document.getElementById('footer_contact');
-      footerList.innerHTML = `<li>${contacts.contact_email || 'Нет данных'}</li><li>${contacts.contact_phone || 'Нет данных'}</li><li>${contacts.contact_address || 'Нет данных'}</li>`;
+      footerList.innerHTML = `<li class="footer_email>${contacts.contact_email || 'Нет данных'}</li><li class="footer_phone">${contacts.contact_phone || 'Нет данных'}</li><li class="footer_address">${contacts.contact_address || 'Нет данных'}</li>`;
     } else {
       console.log('Нет данных в таблице');
     }
