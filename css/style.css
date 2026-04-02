@@ -375,7 +375,7 @@ p.features-center {
   flex: 1 1 500px;
   padding: 30px;
   background: #D9D9D9;
-  padding: 24px;
+  padding: 40px;
   border-radius: 40px;
   border: 2px solid #548BEF;
   flex: 1 1 280px;
@@ -453,11 +453,18 @@ p.features-center {
 }
 
 .map {
-  flex: 1 1 100%;
-  height: 300px;
-  background: #ddd;
+  height: 480px;
+  width: 100%;
   margin-top: 16px;
-  border-radius: 10px;
+  background: #D9D9D9;
+  color: #2681E9;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  border: 2px solid #548BEF;
 }
 
 /* Иконк другие */
