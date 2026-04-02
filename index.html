@@ -21,8 +21,8 @@
     <div class="header-inner">
       <div class="flex gap-20">
         <div class="logo"><img src="src/svg/logo-white-blue.svg" alt=""><span>Astra</span></div>
-        <div class="email"><span id="header_email">почта@мэйл.ру</span></div>
       </div>
+      <div class="email"><span id="header_email">почта@мэйл.ру</span></div>
       <div class="flex gap-10">
         <a href="https://play.google.com/store/" class="btn-app hide-mobile google-play">
 			<span class="gp-icon"><img src="src\svg\googleplay-icon.svg" alt=""></span>
@@ -227,9 +227,51 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('.contact-form');
-    
+        
+	function validateEmail(email) {
+		const re = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
+		return re.test(email);
+	}
+
+	function validatePhone(phone) {
+		const cleaned = phone.replace(/[\s\-\(\)]/g, '');
+		const re = /^(\+7|7|8)?(\d{10})$/;
+		return re.test(cleaned);
+	}
+	
+	function showCustomAlert(message, duration = 3000) {
+		const oldAlert = document.querySelector('.custom-alert');
+		if (oldAlert) oldAlert.remove();
+		
+		const alertDiv = document.createElement('div');
+		alertDiv.className = 'custom-alert';
+		alertDiv.textContent = message;
+		document.body.appendChild(alertDiv);
+		
+		setTimeout(() => {
+			if (alertDiv) alertDiv.remove();
+		}, duration);
+	}
+	
     form.addEventListener('submit', function(event) {
         event.preventDefault();
+		
+		const email = document.getElementById('email').value;
+		const phone = document.getElementById('phone').value;
+
+		if (!validateEmail(email)) {
+			showCustomAlert('Пожалуйста, введите корректный email (например: name@domain.ru)');
+			submitButton.textContent = originalButtonText;
+			submitButton.disabled = false;
+			return;
+		}
+
+		if (!validatePhone(phone)) {
+			showCustomAlert('Пожалуйста, введите корректный номер телефона (11 цифр, например: 89123456789 или +79123456789)');
+			submitButton.textContent = originalButtonText;
+			submitButton.disabled = false;
+			return;
+		}
 		
         const submitButton = form.querySelector('button[type="submit"]');
         const originalButtonText = submitButton.textContent;
@@ -243,11 +285,11 @@ document.addEventListener('DOMContentLoaded', function() {
         )
         .then(function(response) {
             console.log('Успешно отправлено!', response.status, response.text);
-            // alert('Сообщение успешно отправлено!');
+            showCustomAlert('Сообщение успешно отправлено!');
             form.reset();
         }, function(error) {
             console.log('Ошибка отправки:', error);
-            // alert('Произошла ошибка при отправке. Пожалуйста, попробуйте позже.');
+            showCustomAlert('Произошла ошибка при отправке. Пожалуйста, попробуйте позже.');
         })
         .finally(function() {
             submitButton.textContent = originalButtonText;
