@@ -244,7 +244,25 @@ header .btn-app {
 }
 
 .o-with-star {
-	background: url("../src/svg/star.svg") no-repeat center / contain;
+  position: relative;
+  display: inline-block;
+}
+
+.o-with-star::after {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: -30px;
+  width: 100px;
+  height: 100px;
+  background: url("../src/svg/star.svg") no-repeat center/contain;
+  z-index: 10;
+  @media (max-width: 600px) {
+    top: -15px;
+    right: -20px;
+    width: 60px;
+    height: 60px;
+  }
 }
 
 .hero-text {
