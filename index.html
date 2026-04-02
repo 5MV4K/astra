@@ -21,7 +21,7 @@
     <div class="header-inner">
       <div class="flex gap-20">
         <div class="logo"><img src="src/svg/logo-white-blue.svg" alt=""><span>Astra</span></div>
-        <div class="email">info@astra.ru</div>
+        <div class="email"><span id="header_email">почта@мэйл.ру</span></div>
       </div>
       <div class="flex gap-10">
         <a href="https://play.google.com/store/" class="btn-app hide-mobile google-play">
@@ -54,7 +54,7 @@
             <span>GOOGLE PLAY</span>
           </a>
           <a href="https://www.apple.com/app-store/" class="btn-app app-store">
-			<span class="as-icon"><img src="src\svg\googleplay-icon.svg" alt=""></span>
+			<span class="as-icon"><img src="src\svg\apple-icon.svg" alt=""></span>
             <span>APP STORE</span>
           </a>
         </div>
@@ -143,15 +143,15 @@
 		<h3>Контакты</h3>
 		  <div class="contact-group">
 		  <div class="contact-icon email"></div>
-          <div class="contact-info-item"><strong>Email:</strong> <br>info@astra.ru</div>
+          <div class="contact-info-item"><strong>Email:</strong> <br><span id="contact_email">Почта</span></div>
 		  </div>
 		  <div class="contact-group">
 		  <div class="contact-icon phone"></div>
-          <div class="contact-info-item"><strong>Телефон:</strong> <br>+78121112233</div>
+          <div class="contact-info-item"><strong>Телефон:</strong> <br><span id="contact_phone">Телефон</span></div>
 		  </div>
 		  <div class="contact-group">
 		  <div class="contact-icon adress"></div>
-          <div class="contact-info-item"><strong>Юридический адрес:</strong> <br>Россия, 191186, Санкт-Петербург, ул. Большая Морская, 18</div>
+          <div class="contact-info-item"><strong>Юридический адрес:</strong> <br><span id="contact_address">Адрес</span></div>
 		  </div>
         </div>
 		</div>
@@ -177,10 +177,8 @@
       </div>
       <div class="footer-col">
         <h5>Контакты</h5>
-        <ul>
-          <li>info@astra.ru</li>
-          <li>+78121112233</li>
-          <li>Санкт-Петербург, ул. Большая Морская, 18</li>
+        <ul id="footer_contact">
+			<li>Загрузка контактов</li>
 
         </ul>
       </div>
@@ -211,6 +209,10 @@
 <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
+<script
+	type="text/javascript"
+	src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+</script>
 <script type="text/javascript">
    (function(){
       emailjs.init({
@@ -220,40 +222,83 @@
 </script>
 
 <script type="text/javascript">
-// Полный код для вашей страницы
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('.contact-form');
     
     form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Предотвращаем стандартную отправку формы
-        
-        // Показываем индикатор загрузки (опционально)
+        event.preventDefault();
+		
         const submitButton = form.querySelector('button[type="submit"]');
         const originalButtonText = submitButton.textContent;
         submitButton.textContent = 'Отправка...';
         submitButton.disabled = true;
         
-        // Отправляем данные через EmailJS
         emailjs.sendForm(
-            'service_qyh2csm',    // ID вашего сервиса в EmailJS
-            'template_pijt5pp',   // ID вашего шаблона в EmailJS
-            this                 // Передаем форму
+            'service_qyh2csm',    // ID сервиса
+            'template_pijt5pp',   // ID шаблона
+            this
         )
         .then(function(response) {
             console.log('Успешно отправлено!', response.status, response.text);
-            alert('Сообщение успешно отправлено!');
-            form.reset(); // Очищаем форму
+            // alert('Сообщение успешно отправлено!');
+            form.reset();
         }, function(error) {
             console.log('Ошибка отправки:', error);
-            alert('Произошла ошибка при отправке. Пожалуйста, попробуйте позже.');
+            // alert('Произошла ошибка при отправке. Пожалуйста, попробуйте позже.');
         })
         .finally(function() {
-            // Возвращаем кнопку в исходное состояние
             submitButton.textContent = originalButtonText;
             submitButton.disabled = false;
         });
     });
 });
+</script>
+<script>
+  const SUPABASE_URL = 'https://qxkaowuzfyxpnerzdnfi.supabase.co'
+  const SUPABASE_ANON_KEY = 'sb_publishable_wfdQVQ1v7YOglvc9hHBl7g_-S7-om-z'
+  
+  supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+async function loadContacts() {
+  try {
+    const { data, error } = await supabase
+      .from('test_table')
+      .select('contact_email, contact_phone, contact_address')
+      .limit(1);
+    
+    if (error) throw error;
+    
+    if (data && data.length > 0) {
+      const contacts = data[0];
+      
+      if (contacts.contact_email) {
+        document.getElementById('header_email').textContent = contacts.contact_email;
+      }
+      
+      if (contacts.contact_email) {
+        document.getElementById('contact_email').textContent = contacts.contact_email;
+      }
+      if (contacts.contact_phone) {
+        document.getElementById('contact_phone').textContent = contacts.contact_phone;
+      }
+      if (contacts.contact_address) {
+        document.getElementById('contact_address').textContent = contacts.contact_address;
+      }
+      
+      const footerList = document.getElementById('footer_contact');
+      footerList.innerHTML = `<li>${contacts.contact_email || 'Нет данных'}</li><li>${contacts.contact_phone || 'Нет данных'}</li><li>${contacts.contact_address || 'Нет данных'}</li>`;
+    } else {
+      console.log('Нет данных в таблице');
+    }
+    
+  } catch (err) {
+    console.error('Ошибка загрузки контактов:', err);
+  }
+}
+
+  document.addEventListener('DOMContentLoaded', function() {
+    loadContacts();
+	});
 </script>
 </body>
 </html>
