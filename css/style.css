@@ -707,3 +707,36 @@ footer .logo {
 .footer-bottom a:hover {
   color: #fff;
 }
+
+li.footer_email,
+li.footer_phone,
+li.footer_address {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+li.footer_email::before,
+li.footer_phone::before,
+li.footer_address::before {
+  content: "";
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+li.footer_email::before {
+  background-image: url(../src/svg/email_icon.svg);
+}
+
+li.footer_phone::before {
+  background-image: url(../src/svg/phone_icon.svg);
+}
+
+li.footer_address::before {
+  background-image: url(../src/svg/address_icon.svg);
+}
