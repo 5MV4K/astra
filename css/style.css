@@ -3,6 +3,9 @@
   src: url("../src/fonts/RussoOne-Regular.ttf") format("truetype");
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 * {
   margin: 0;
@@ -48,9 +51,19 @@ a.btn-app span {
 
 .flex {
   display: flex;
-  @media (max-width: 800px) {
+  @media (max-width: 750px) {
 	  flex-direction: column;
   }
+}
+
+.header-inner .email + .flex.gap-10 {
+	@media (max-width: 1035px) {
+		flex-direction: column;
+	}
+	@media (max-width: 750px) {
+			width: 100%;
+		flex-direction: none;
+	}
 }
 
 .justify-center {
@@ -92,12 +105,6 @@ header {
   align-items: center;
   flex-wrap: wrap;
   gap: 15px;
-  @media (max-width: 1080px) {
-	justify-content: space-around;
-  }
-  @media (max-width: 750px) {
-	flex-direction: row;
-  }
 }
 
 .logo {
@@ -165,8 +172,9 @@ header {
   width: 340px;
   /* justify-content: space-evenly; */
   padding-left: 40px;
-  @media (max-width: 600px) {
+  @media (max-width: 750px) {
 	  font-size: 20px;
+	  width: 100%;
   }
 }
 
@@ -232,6 +240,9 @@ header .btn-app {
   
   @media (max-width: 600px) {
 	  font-size: 32px;
+  }
+  @media (max-width: 310px) {
+	  font-size: 24px;
   }
 }
 
